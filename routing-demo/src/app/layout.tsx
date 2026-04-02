@@ -1,7 +1,10 @@
 import React from "react";
 
 export const metadata = {
-  title: "Routing Demo",
+  title: {
+    default: "Next JS Learning",
+    template: "%s | Next JS Learning",
+  },
   description: "A demo of routing in Next.js 13",
 };
 
