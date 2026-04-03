@@ -5,18 +5,23 @@
 // import RevenueMetrics from "./RevenueMetrics";
 // import Notifications from "./Notifications";
 
+import React from "react";
+
 export default function ComplexDashboardLayout({
   children,
   users,
   revenue,
   notifications,
+  login,
 }: {
   children: React.ReactNode;
   users: React.ReactNode;
   revenue: React.ReactNode;
   notifications: React.ReactNode;
+  login: React.ReactNode;
 }) {
-  return (
+  const isLoggedIn = true;
+  return isLoggedIn ? (
     <>
       <div>{children}</div>
       <div style={{ display: "flex" }}>
@@ -32,5 +37,7 @@ export default function ComplexDashboardLayout({
       <RevenueMetrics />
       <Notifications /> */}
     </>
+  ) : (
+    <div>{login}</div>
   );
 }
