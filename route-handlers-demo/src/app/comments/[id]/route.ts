@@ -1,7 +1,7 @@
 import { comments } from "../data";
 
 export async function GET(
-  request: Request,
+  _request: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
@@ -36,4 +36,16 @@ export async function PATCH(
       "Content-Type": "application/json",
     },
   });
+}
+
+export async function DELETE(
+  _request: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const { id } = await params;
+  const commentIndex = comments.findIndex((c) => c.id === id);
+  const deletedComment = comments[commentIndex];
+
+  comments.splice(commentIndex, 1);
+  return Response.json(deletedComment);
 }
