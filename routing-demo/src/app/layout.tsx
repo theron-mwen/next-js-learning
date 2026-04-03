@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorWrapper from "./error-wrapper";
 
 export const metadata = {
   title: {
@@ -24,7 +25,9 @@ export default function RootLayout({
         >
           <h1>Header</h1>
         </header>
+        <ErrorWrapper>
         {children}
+        </ErrorWrapper>
         <footer
           style={{
             backgroundColor: "ghostwhite",
