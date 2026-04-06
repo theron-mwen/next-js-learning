@@ -1,7 +1,13 @@
-
 import { serverSideFunction } from "@/utils/server-util";
-export default function ServerRoutePage() {
-    serverSideFunction();
+import ImageSlider from "@/components/ImageSlider";
 
-    return <h1>Server Route</h1>;
+export default function ServerRoutePage() {
+  serverSideFunction();
+
+  return (
+    <>
+      <h1>Server Route</h1>
+      <ImageSlider />
+    </>
+  );
 }
